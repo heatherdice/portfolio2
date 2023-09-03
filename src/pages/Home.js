@@ -9,7 +9,7 @@ export default function Home() {
                     need to find a way to position text w/in overlay constraints */}
                     <div className="text-end">
                         <h1 className="font-katibeh text-4xl md:text-9xl">Heather Dice</h1>
-                        <h2 className="font-karla -mt-10 text-5xl">Web Developer</h2>
+                        <h2 className="font-karla -mt-10 text-5xl text-yale-blue">Web Developer</h2>
                     </div>
             </div>
             {/* <VideoBackground /> */}
