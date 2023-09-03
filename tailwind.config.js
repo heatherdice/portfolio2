@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "katibeh": ['Katibeh', 'cursive'],
+        "karla": ['Karla', 'sans-serif'],
       }
     },
   },
