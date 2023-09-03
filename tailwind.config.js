@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,html,css}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "katibeh": ['Katibeh', 'cursive'],
+      }
+    },
   },
   plugins: [],
 }
