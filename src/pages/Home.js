@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import VideoBackground from '../components/VideoBackground';
+import FadeIn from 'react-fade-in';
 
 // @TODO: organize CSS
 
@@ -26,8 +27,10 @@ export default function Home() {
             <div className="content">
                 {showTitle &&
                     <>
-                        <h1 className="font-katibeh text-4xl md:text-9xl bg-gradient-to-b from-oxford-blue from-2% to-french-gray to-50% text-transparent bg-clip-text mr-10">{homeText.title}</h1>
-                        <h2 className="font-karla -mt-10 text-5xl text-oxford-blue mr-10">{homeText.subtitle}</h2>
+                        <FadeIn>
+                            <h1 className="font-katibeh text-4xl md:text-9xl bg-gradient-to-b from-oxford-blue from-2% to-french-gray to-50% text-transparent bg-clip-text mr-10">{homeText.title}</h1>
+                            <h2 className="font-karla -mt-10 text-5xl text-oxford-blue mr-10">{homeText.subtitle}</h2>
+                        </FadeIn>
                     </>
                 }
             </div>
