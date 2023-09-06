@@ -2,7 +2,7 @@ import React from "react";
 import VideoBackground from '../components/VideoBackground';
 import FadeIn from 'react-fade-in';
 
-// @TODO: organize CSS
+// @TODO: organize VideoBackground CSS
 
 export default function Home() {
     return (

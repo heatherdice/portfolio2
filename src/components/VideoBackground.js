@@ -7,5 +7,5 @@ export default function VideoBackground() {
         <div className="w-screen h-screen">
             <video playsInline autoPlay muted poster="background.png" src={backgroundVideo} type="video/mp4" />
         </div>
-    )
+    );
 }
