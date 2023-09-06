@@ -1,10 +1,17 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar.js';
 import Home from './pages/Home.js';
+
+// @TODO: style navbar, get on top of background video
 
 function App() {
   return (
-    <div>
-      <Home />
+    <div className="main">
+      <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
     </div>
   );
 }
