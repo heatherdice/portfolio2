@@ -7,6 +7,7 @@ import FadeIn from 'react-fade-in';
 export default function Home() {
     return (
         <div>
+            {/* VideoBackground component moved to App.js 9/10, may opt to move back to just home or use as loading screen */}
             {/* <VideoBackground /> */}
             <div className="content">
                 <FadeIn delay='2000' transitionDuration='3000'>
