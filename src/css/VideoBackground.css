@@ -1,15 +1,17 @@
-/* previously on 1st div in Home.js */
-/* .main {
+/* 1st div in App.js */
+.main {
     width: 100vh;
     height: 100vh;
-} */
+}
 
+/* video tag */
 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* 2nd div in Home.js, under VideoBackground component */
 .content {
     position: absolute;
     width: 100%;
