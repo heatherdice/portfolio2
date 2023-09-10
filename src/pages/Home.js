@@ -2,8 +2,6 @@ import React from "react";
 // import VideoBackground from '../components/VideoBackground';
 import FadeIn from 'react-fade-in';
 
-// @TODO: organize VideoBackground CSS - some classes pertain strictly to video while others pertain to home page. some styling also needs to apply to navbar.
-
 export default function Home() {
     return (
         <div>
