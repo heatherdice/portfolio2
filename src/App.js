@@ -9,7 +9,7 @@ import useResponsive from './hooks/useResponsive.js';
 
 export default function App() {
     const { windowWidth, screenType } = useResponsive;
-    const screenSizes = () => {
+    const screenSize = () => {
       // numbers taken from tutorial video, may need to change
       if (screenType === "DESKTOP") {
         return {
@@ -37,7 +37,7 @@ export default function App() {
   return (
     <div className="main">
       <VideoBackground />
-      <NavBar />
+      <NavBar width={screenSize().width} height={screenSize().height} />
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

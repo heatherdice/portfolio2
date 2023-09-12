@@ -4,7 +4,7 @@ import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
 
-export default function NavBar() {
+export default function NavBar(width, height) {
     // responsive settings for mobile - good, but do I need to add this to every component that changes depending on mobile screen? What if something just needs to be resized?
     const {screenType} = useResponsive();
     const [mobileView, setMobileView] = useState(false);
@@ -17,6 +17,11 @@ export default function NavBar() {
             setMobileView(true);
         };
     }, [screenType]);
+
+    // const screenDimensions = {
+    //     width: totalWidth,
+    //     height: totalHeight
+    // };
 
     return (
         <>
