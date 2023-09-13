@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
@@ -26,7 +26,7 @@ export default function NavBar(width, height) {
         about, projects, experience, contact
     ];
 
-    // responsive settings for mobile - good, but do I need to add this to every component that changes depending on mobile screen? What if something just needs to be resized?
+    // responsive settings for mobile - good, but do I need to add this to every component that changes depending on mobile screen? What if something just needs to be resized? I guess use Tailwind?
     const {screenType} = useResponsive();
     const [mobileView, setMobileView] = useState(false);
 
@@ -54,9 +54,9 @@ export default function NavBar(width, height) {
                             {/* classes on li's not working, except padding? */}
                             {navLinksArray.map((navbar) =>
                                 <li className="nav-link cursor-pointer p-5">
-                                    <Link to={navbar.link} >
+                                    <NavLink to={navbar.link}>
                                         {navbar.title}
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             )}
                         </ul>
