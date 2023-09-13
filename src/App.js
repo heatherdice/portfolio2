@@ -10,7 +10,7 @@ import useResponsive from './hooks/useResponsive.js';
 export default function App() {
     const { windowWidth, screenType } = useResponsive;
     const screenSize = () => {
-      // numbers taken from tutorial video, may need to change
+      // numbers taken from tutorial video, may need to change; seems to be for specifically setting height & width of component, & therefore should be part of said component & not in App.js
       if (screenType === "DESKTOP") {
         return {
           width: 1200,
@@ -37,7 +37,8 @@ export default function App() {
   return (
     <div className="main">
       <VideoBackground />
-      <NavBar width={screenSize().width} height={screenSize().height} />
+      <NavBar />
+      {/* NavBar previously included width={screenSize().width} height={screenSize().height} - unsure if necessary? */}
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

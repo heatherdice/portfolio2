@@ -1,5 +1,4 @@
 /* Custom hook designed to access the current width of the page in order to make the app more smoothly responsive */
-
 import React, { useState, useEffect } from "react";
 
 export default function useResponsive() {

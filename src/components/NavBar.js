@@ -4,8 +4,8 @@ import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
 
-export default function NavBar(width, height) {
-    // navbar links and titles as objects, put in array to map over for cleaner return code
+export default function NavBar() {
+    // navbar links & titles as objects, put in array to map over for cleaner return code
     const about = {
         link: '/about',
         title: 'About'
@@ -51,7 +51,7 @@ export default function NavBar(width, height) {
                 <nav className="absolute w-screen h-[10%] top-0">
                     {!mobileView ? (
                         <ul className="flex flex-row justify-end font-karla font-medium text-3xl text-oxford-blue">
-                            {/* classes on li's not working, except padding? */}
+                            {/* classes on li not working, except padding? */}
                             {navLinksArray.map((navbar) =>
                                 <li className="nav-link cursor-pointer p-5">
                                     <NavLink to={navbar.link}>
