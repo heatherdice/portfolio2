@@ -8,6 +8,7 @@ import useResponsive from "../hooks/useResponsive";
 /* @TODO 9/15/23:
 * FadeIn: more gradual, fade up
 * li styling: only class seeming to work is padding?
+* underline styling, animation
 * hamburger icon: not appearing on top of video
 * dropdown menu: create, style (new component)
 */ 
