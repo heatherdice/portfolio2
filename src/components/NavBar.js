@@ -7,29 +7,28 @@ import useResponsive from "../hooks/useResponsive";
 
 export default function NavBar() {
     // call useResponsive Hook
-    const {mobileScreen, tabletScreen, desktopScreen} = useResponsive;
+    const {mobileScreen, tabletScreen, desktopScreen} = useResponsive();
     // test
     console.log(mobileScreen, tabletScreen, desktopScreen);
 
     // navbar links & titles as objects, put in array to map over for cleaner return code
-    const about = {
-        link: '/about',
-        title: 'About'
-    };
-    const projects = {
-        link: '/projects',
-        title: 'Projects'
-    };
-    const experience = {
-        link: '/experience',
-        title: 'Experience'
-    };
-    const contact = {
-        link: '/contact',
-        title: 'Contact'
-    };
     const navLinksArray = [
-        about, projects, experience, contact
+        {
+            link: '/about',
+            title: 'About'
+        },
+        {
+            link: '/projects',
+            title: 'Projects'
+        },
+        {
+            link: '/experience',
+            title: 'Experience'
+        },
+        {
+            link: '/contact',
+            title: 'Contact'
+        }
     ];
 
     return (
@@ -63,4 +62,4 @@ export default function NavBar() {
             </FadeIn>
         </>
     );
-}
+};
