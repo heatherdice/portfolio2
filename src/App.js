@@ -10,7 +10,6 @@ export default function App() {
     <div className="main">
       <VideoBackground />
       <NavBar />
-      {/* NavBar previously included width={screenSize().width} height={screenSize().height} - unsure if necessary? */}
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>
