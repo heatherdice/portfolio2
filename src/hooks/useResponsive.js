@@ -11,9 +11,9 @@ export default function useResponsive() {
 
     // update state whenever user resizes the screen
     const updateWindowWidth = () => {
-        const mobileScreen = window.innerWidth <= 760;
-        const tabletScreen = window.innerWidth >= 760 && window.innerWidth <= 900;
-        const desktopScreen = window.innerWidth > 900;
+        const mobileScreen = window.innerWidth <= 480;
+        const tabletScreen = window.innerWidth >= 480 && window.innerWidth <= 750;
+        const desktopScreen = window.innerWidth > 750;
 
         setScreenType({mobileScreen, tabletScreen, desktopScreen});
     };

@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
+/* NavBar comopnent utilizing FadeIn component for fade-in animation and custom useResponsive Hook for responsiveness */
+
+import React from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
-// @TODO: style navbar, get on top of background video
+/* @TODO 9/15/23:
+* FadeIn: more gradual, fade up
+* li styling: only class seeming to work is padding?
+* hamburger icon: not appearing on top of video
+* dropdown menu: create, style (new component)
+*/ 
 
 export default function NavBar() {
     // call useResponsive Hook
