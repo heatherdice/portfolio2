@@ -1,37 +1,33 @@
 /* Custom hook designed to access the current width of the page in order to make the app more smoothly responsive */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function useResponsive() {
-    // save local state of window width
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    // set screen type to "initial", aka the initial state of the type of screen, as a starting point
-    const [screenType, setScreenType] = useState("INITIAL");
-    // @TODO: change "INITIAL" to a default value
+    // set sefault state of screen resolution to false (may want to change from bool to str for ease of reading in console)
+    const [screenType, setScreenType] = useState({
+        mobileScreen: false,
+        tabletScreen: false,
+        desktopScreen: false
+    });
 
+    // update state whenever user resizes the screen
+    const updateWindowWidth = () => {
+        const mobileScreen = window.innerWidth <= 760;
+        const tabletScreen = window.innerWidth >= 760 && window.innerWidth <= 900;
+        const desktopScreen = window.innerWidth > 900;
+
+        setScreenType({mobileScreen, tabletScreen, desktopScreen});
+    };
+
+    // update state on initial load
     useEffect(() => {
-        // any time window size changes, run updateWindowDimensions function
-        window.addEventListener("resize", updateWindowDimensions);
+        // listen for window resize, call updateWindowWidth
+        window.addEventListener("resize", updateWindowWidth);
 
-        // prevents recursive useEffect loop
+        // remove eventListner to avoid memory leaks, collision of component events
         return function cleanup() {
-            window.removeEventListener("resize", updateWindowDimensions);
+            window.removeEventListener("resize", updateWindowWidth);
         };
-    }, [window.innerWidth]); // tells React to listen to any changes in window.innerWidth in eventListener in order to call useEffect Hook
+    }, [window.innerWidth]); // tells React to listen to any changes in window.innerWidth in eventListener in order to call useEffect Hook, rather than running after every render regardless of whether or not window was resized
 
-    const updateWindowDimensions = () => {
-        // sets screen type depending on screen width
-        setWindowWidth(window.innerWidth);
-        if (window.innerWidth > 1300) {
-            setScreenType("DESKTOP");
-        } else if (window.innerWidth <= 1300 && window.innerWidth > 800) {
-            setScreenType("TABLET");
-        } else {
-            setScreenType("MOBILE");
-        };
-    };
-
-    return { // object shorthand for when key & value are the same
-        windowWidth,
-        screenType
-    };
+    return screenType
 };
