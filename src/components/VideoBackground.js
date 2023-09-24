@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundVideo from "../assets/images/background.mp4";
+import backgroundVideo from "../assets/images/backgroundVideo.mp4";
 
 export default function VideoBackground() {
     return (
