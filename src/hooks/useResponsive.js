@@ -1,15 +1,12 @@
 /* Custom hook designed to access the current width of the page in order to make the app more smoothly responsive */
 import { useState, useEffect } from "react";
 
-/* @TODO 9/24/23:
-* initial state cannot be bool - hook does not read current screen size on load */
-
 export default function useResponsive() {
     // set default state of screen resolution to false
     const [screenType, setScreenType] = useState({
-        mobileScreen: false,
-        tabletScreen: false,
-        desktopScreen: false
+        mobileScreen: window.innerWidth <= 480,
+        tabletScreen: window.innerWidth >= 480 && window.innerWidth <= 750,
+        desktopScreen: window.innerWidth > 750
     });
 
     // update state whenever user resizes the screen
