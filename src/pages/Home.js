@@ -2,28 +2,22 @@ import React from "react";
 // import VideoBackground from '../components/VideoBackground';
 import FadeIn from 'react-fade-in';
 import useResponsive from "../hooks/useResponsive";
-/* @TODO 9/15/23:
-* find way to center text in mobile - keep title in one line! otherwise color gradient won't work properly
+/* @TODO 9/24/23:
+* fix video bg cover in mobile (maybe in VideoBackground component)
 */
 
 export default function Home() {
     // call useResponsive Hook
-    const {mobileScreen} = useResponsive();
-
-    const pageContentStyling = {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: '0',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'end'
-    }
+    const { mobileScreen, tabletScreen } = useResponsive();
 
     // conditional for responsive text styling
-    let responsiveTextStyle; 
-    if (mobileScreen) {
+    let responsivePageContent;
+    let responsiveTextStyle;
+
+    if (mobileScreen || tabletScreen) {
+        responsivePageContent = {
+            alignItems: 'center'
+        };
         responsiveTextStyle = {
             titleTextStyle : {
                 fontSize: '4rem'
@@ -33,6 +27,9 @@ export default function Home() {
             }
         };
     } else {
+        responsivePageContent = {
+            alignItems: 'end'
+        };
         responsiveTextStyle = {
             titleTextStyle : {
                 fontSize: '8rem',
@@ -50,10 +47,10 @@ export default function Home() {
         <div>
             {/* VideoBackground component moved to App.js 9/10, may opt to move back to just home or use as loading screen */}
             {/* <VideoBackground /> */}
-            <div style={pageContentStyling}>
+            <div style={responsivePageContent} className="absolute w-full h-full top-0 flex flex-col justify-center">
                 <FadeIn delay='2000' transitionDuration='3000'>
                     {/* previously contained classNames text-9xl & mr-10 */}
-                    <h1 style={responsiveTextStyle.titleTextStyle} className="font-katibeh bg-gradient-to-b from-oxford-blue from-2% to-french-gray to-50% text-transparent bg-clip-text">Heather Dice</h1>
+                    <h1 style={responsiveTextStyle.titleTextStyle} className="font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">Heather Dice</h1>
                 </FadeIn>
                 <FadeIn delay='3500' transitionDuration='3000'>
                     {/* previously contained classNames text-5xl & mr-10 */}
