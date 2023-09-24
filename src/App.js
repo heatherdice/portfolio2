@@ -7,7 +7,7 @@ import VideoBackground from './components/VideoBackground';
 export default function App() {
 
   return (
-    <div className="main">
+    <div>
       <VideoBackground />
       <NavBar />
       <Routes>

@@ -43,9 +43,9 @@ export default function NavBar() {
         <>
             {/* FadeIn working, but not well; appears suddenly rather than fading. transitionDuration off? */}
             <FadeIn delay='4000' transitionDuration='5000'>
-                <nav className="absolute w-screen h-[10%] top-0">
+                <nav className="absolute w-screen h-[10%] top-0 z-40">
                     {desktopScreen ? (
-                        <ul className="flex flex-row justify-end font-karla font-medium text-3xl text-oxford-blue">
+                        <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
                             {/* classes on li not working, except padding? */}
                             {navLinksArray.map((navbar) =>
                                 <li className="nav-link cursor-pointer p-5">
@@ -58,7 +58,7 @@ export default function NavBar() {
                     ) : (
                         <ul className="flex justify-end">
                             <li className="cursor-pointer p-5">
-                                <i className="fa-solid fa-bars text-3xl text-oxford-blue" />
+                                <i className="fa-solid fa-bars text-3xl text-oxford-blue absolute" />
                             </li>
                         </ul>
                     )}

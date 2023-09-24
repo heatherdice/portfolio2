@@ -57,7 +57,7 @@ export default function Home() {
                 </FadeIn>
                 <FadeIn delay='3500' transitionDuration='3000'>
                     {/* previously contained classNames text-5xl & mr-10 */}
-                    <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue">Web Developer</h2>
+                    <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue font-medium">Web Developer</h2>
                 </FadeIn>
             </div>
         </div>
