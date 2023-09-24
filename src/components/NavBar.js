@@ -40,32 +40,36 @@ export default function NavBar() {
     return (
         <>
             {/* FadeIn working, but not well; appears suddenly rather than fading. transitionDuration off? */}
-            <FadeIn delay='4000' transitionDuration='5000'>
+            {/* <FadeIn delay='4000' transitionDuration='5000'> */}
                 <nav className="absolute w-screen h-[10%] top-0 z-40">
                     {desktopScreen ? (
-                        <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
-                            {/* classes on li not working, except padding? */}
-                            {navLinksArray.map((navbar) =>
-                                <li className="nav-link cursor-pointer p-5">
-                                    <NavLink to={navbar.link}>
-                                        {navbar.title}
-                                    </NavLink>
-                                </li>
-                            )}
-                        </ul>
+                        <FadeIn delay='5000' transitionDuration='3000'>
+                            <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
+                                {/* classes on li not working, except padding? */}
+                                    {navLinksArray.map((navbar) =>
+                                        <li className="nav-link cursor-pointer p-5">
+                                            <NavLink to={navbar.link}>
+                                                {navbar.title}
+                                            </NavLink>
+                                        </li>
+                                    )}
+                            </ul>
+                        </FadeIn>
                     ) : (
-                        <ul className="flex justify-end">
-                            <li className="cursor-pointer p-5">
-                                <i className="fa-solid fa-bars text-3xl text-oxford-blue absolute" />
-                            </li>
-                        </ul>
+                        <FadeIn delay='5000' transitionDuration='3000'>
+                            <ul className="flex justify-end text-oxford-blue text-3xl">
+                                <li className="cursor-pointer p-5 z-40">
+                                    <i className="fa-solid fa-bars absolute" />
+                                </li>
+                            </ul>
+                        </FadeIn>
                     )}
                     {/* add info here for mobile menu: 
                     {mobileScreen && hamburgerClicked && (
                         dropdown content - maybe do a component here?
                     )} */}
                 </nav>
-            </FadeIn>
+            {/* </FadeIn> */}
         </>
     );
 };
