@@ -1,10 +1,10 @@
-/* NavBar comopnent utilizing FadeIn component for fade-in animation and custom useResponsive Hook for responsiveness */
-
+/* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness */
 import React from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
+
 /* @TODO 9/15/23:
 * FadeIn: more gradual, fade up
 * li styling: only class seeming to work is padding?
@@ -63,7 +63,7 @@ export default function NavBar() {
                         </ul>
                     )}
                     {/* add info here for mobile menu: 
-                    {mobileView && hamburgerClicked && (
+                    {mobileScreen && hamburgerClicked && (
                         dropdown content - maybe do a component here?
                     )} */}
                 </nav>

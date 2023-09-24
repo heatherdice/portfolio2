@@ -10,7 +10,18 @@ export default function Home() {
     // call useResponsive Hook
     const {mobileScreen} = useResponsive();
 
-    // conditional for responsive styling
+    const pageContentStyling = {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: '0',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'end'
+    }
+
+    // conditional for responsive text styling
     let responsiveTextStyle; 
     if (mobileScreen) {
         responsiveTextStyle = {
@@ -39,7 +50,7 @@ export default function Home() {
         <div>
             {/* VideoBackground component moved to App.js 9/10, may opt to move back to just home or use as loading screen */}
             {/* <VideoBackground /> */}
-            <div className="content">
+            <div style={pageContentStyling}>
                 <FadeIn delay='2000' transitionDuration='3000'>
                     {/* previously contained classNames text-9xl & mr-10 */}
                     <h1 style={responsiveTextStyle.titleTextStyle} className="font-katibeh bg-gradient-to-b from-oxford-blue from-2% to-french-gray to-50% text-transparent bg-clip-text">Heather Dice</h1>
