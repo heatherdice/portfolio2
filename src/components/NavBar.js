@@ -4,17 +4,18 @@ import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-/* @TODO 9/15/23:
-* hamburger icon: not appearing on top of video
+/* @TODO 9/24/23:
 * dropdown menu: create, style (new component)
 */
 
 export default function NavBar() {
     // call useResponsive Hook
-    const {mobileScreen, tabletScreen, desktopScreen} = useResponsive();
+    const { desktopScreen } = useResponsive();
     // test
-    console.log(mobileScreen, tabletScreen, desktopScreen);
+    // console.log(mobileScreen, tabletScreen, desktopScreen);
 
     // navbar links & titles as objects, put in array to map over for cleaner return code
     const navLinksArray = [
@@ -53,11 +54,9 @@ export default function NavBar() {
                     </FadeIn>
                 ) : (
                     <FadeIn delay='5000' transitionDuration='3000'>
-                        <ul className="flex justify-end text-oxford-blue text-3xl">
-                            <li className="cursor-pointer p-5">
-                                <i className="fa-solid fa-bars absolute z-40" />
-                            </li>
-                        </ul>
+                        <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
+                            <FontAwesomeIcon icon={faBars} className="absolute z-40" />
+                        </div>
                     </FadeIn>
                 )}
                 {/* add info here for mobile menu: 
