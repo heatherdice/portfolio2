@@ -14,16 +14,30 @@ export default function Home() {
     let responsivePageContent;
     let responsiveTextStyle;
 
-    if (mobileScreen || tabletScreen) {
+    if (mobileScreen) {
         responsivePageContent = {
             alignItems: 'center'
         };
         responsiveTextStyle = {
             titleTextStyle : {
-                fontSize: '4rem'
+                fontSize: '4.5rem',
+                lineHeight: '1'
             },
             subtitleTextStyle: {
-                fontSize: '2rem'
+                fontSize: '2.5rem'
+            }
+        };
+    } else if (tabletScreen) {
+        responsivePageContent = {
+            alignItems: 'center'
+        };
+        responsiveTextStyle = {
+            titleTextStyle : {
+                fontSize: '6rem',
+                lineHeight: '1'
+            },
+            subtitleTextStyle: {
+                fontSize: '3rem'
             }
         };
     } else {
