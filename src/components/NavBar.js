@@ -1,4 +1,6 @@
-/* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness */
+/* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness.
+* Maps over navLinksArray to supply navbar with links to various pages.
+* NavBar CSS provides styling for animated elements. */
 import React from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
@@ -14,8 +16,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export default function NavBar() {
     // call useResponsive Hook
     const { desktopScreen } = useResponsive();
-    // test
-    // console.log(mobileScreen, tabletScreen, desktopScreen);
 
     // navbar links & titles as objects, put in array to map over for cleaner return code
     const navLinksArray = [
@@ -40,6 +40,7 @@ export default function NavBar() {
     return (
         <>
             <nav className="absolute w-screen h-[10%] top-0 z-40">
+                {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
                 {desktopScreen ? (
                     <FadeIn delay='5000' transitionDuration='3000'>
                         <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
