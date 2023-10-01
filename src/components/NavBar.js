@@ -1,7 +1,7 @@
 /* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness.
 * Maps over navLinksArray to supply navbar with links to various pages.
 * NavBar CSS provides styling for animated elements. */
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
@@ -15,6 +15,14 @@ import Dropdown from "./Dropdown";
 */
 
 export default function NavBar() {
+    // mobile menu open state, initial value set to false
+    const [mobileMenu, setMobileMenu] = useState(false);
+    
+    // function to open mobile menu
+    const openMobileMenu = () => {
+        setMobileMenu((open) => !open)
+    };
+
     // call useResponsive Hook
     const { desktopScreen } = useResponsive();
 
@@ -64,7 +72,7 @@ export default function NavBar() {
                         <Dropdown />
                     </>
                 )} 
-                {/* {mobileScreen && hamburgerClicked && (
+                {/* {!desktopScreen && mobileMenu && (
                     <Dropdown />
                 )} */}
             </nav>
