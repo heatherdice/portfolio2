@@ -8,6 +8,7 @@ import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import Dropdown from "./Dropdown";
 
 /* @TODO 9/24/23:
 * dropdown menu: create, style (new component)
@@ -54,15 +55,17 @@ export default function NavBar() {
                         </ul>
                     </FadeIn>
                 ) : (
-                    <FadeIn delay='5000' transitionDuration='3000'>
-                        <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
-                            <FontAwesomeIcon icon={faBars} className="absolute z-40" />
-                        </div>
-                    </FadeIn>
-                )}
-                {/* add info here for mobile menu: 
-                {mobileScreen && hamburgerClicked && (
-                    dropdown content - maybe do a component here?
+                    <>
+                        <FadeIn delay='5000' transitionDuration='3000'>
+                            <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
+                                <FontAwesomeIcon icon={faBars} className="absolute z-40" />
+                            </div>
+                        </FadeIn>
+                        <Dropdown />
+                    </>
+                )} 
+                {/* {mobileScreen && hamburgerClicked && (
+                    <Dropdown />
                 )} */}
             </nav>
         </>
