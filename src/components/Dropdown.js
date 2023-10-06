@@ -4,21 +4,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Dropdown({ props = [] }) {
+/* @TODO: 
+* different styling (maybe blue w/ gray text)
+* responsive styling
+*/
+
+export default function Dropdown({ props }) {
     return (
         <div className="flex justify-end z-40 my-3 mx-5">
-            <ul className="w-1/4 text-right bg-white bg-opacity-25 px-3 py-1 border-2 border-oxford-blue rounded">
-                <li className="nav-link cursor-pointer">Test 1</li>
-                <li>Test 2</li>
-                <li>Test 3</li>
-                <li>Test 4</li>
-                {/* {props.map((navbar) => 
-                    <li className="nav-link cursor-pointer pr-3">
-                        <NavLink to={navbar.link}>
-                            {navbar.title}
+            <ul className="w-2/6 text-right text-xl leading-10 bg-white bg-opacity-25 pl-3 py-1 border-2 border-oxford-blue rounded">
+                {props.map((link, index) => (
+                    <li key={index} className="nav-link cursor-pointer pr-3">
+                        <NavLink to={link.link}>
+                            {link.title}
                         </NavLink>
                     </li>
-                )} */}
+                ))}
             </ul>
         </div>
     );

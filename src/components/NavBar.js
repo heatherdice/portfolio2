@@ -71,8 +71,9 @@ export default function NavBar() {
                         </FadeIn>
                     </>
                 )} 
+                {/* toggle mobile/tablet dropdown menu */}
                 {!desktopScreen && mobileMenu && (
-                    <Dropdown />
+                    <Dropdown props={navLinksArray} />
                 )}
             </nav>
         </>

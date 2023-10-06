@@ -17,7 +17,7 @@ export default function Home() {
         };
         responsiveTextStyle = {
             titleTextStyle : {
-                fontSize: '4.5rem',
+                fontSize: '4rem',
                 lineHeight: '1'
             },
             subtitleTextStyle: {
