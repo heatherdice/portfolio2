@@ -1,3 +1,6 @@
+/* Dropdown component for mobile nav bar.
+* Uses NavBar.css for link underline animation. */
+
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -18,5 +21,5 @@ export default function Dropdown({ props = [] }) {
                 )} */}
             </ul>
         </div>
-    )
-}
+    );
+};

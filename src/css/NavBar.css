@@ -1,3 +1,5 @@
+/* Animation styling for navbar links; styles underline onHover */
+
 .nav-link {
     text-decoration: underline 0.08em rgba(0, 0, 0, 0);
     transition: text-decoration-color 300ms;

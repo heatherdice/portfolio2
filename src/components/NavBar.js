@@ -1,13 +1,13 @@
 /* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness.
 * Maps over navLinksArray to supply navbar with links to various pages.
-* NavBar CSS provides styling for animated elements. */
+* NavBar.css provides styling for animated elements. */
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown";
 
 /* @TODO 9/24/23:
@@ -66,15 +66,14 @@ export default function NavBar() {
                     <>
                         <FadeIn delay='5000' transitionDuration='3000'>
                             <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
-                                <FontAwesomeIcon icon={faBars} className="absolute z-40" />
+                                <FontAwesomeIcon icon={faBars} className="absolute z-40" type="button" onClick={openMobileMenu} />
                             </div>
                         </FadeIn>
-                        <Dropdown />
                     </>
                 )} 
-                {/* {!desktopScreen && mobileMenu && (
+                {!desktopScreen && mobileMenu && (
                     <Dropdown />
-                )} */}
+                )}
             </nav>
         </>
     );
