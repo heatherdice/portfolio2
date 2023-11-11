@@ -18,27 +18,19 @@ export default function NavBar() {
     // mobile menu open state, initial value set to false
     const [mobileMenu, setMobileMenu] = useState(false);
     
+    // call useResponsive Hook
+    const { mobileScreen, desktopScreen } = useResponsive();
+
     // open/close mobile menu
     const toggleMenu = () => {
         setMobileMenu(prevState => !prevState);
     };
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (mobileMenu) {
-                setMobileMenu(false);
-            }
-        };
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [mobileMenu]);
+    // close navbar on resize
+    if (mobileMenu && !mobileScreen) {
+        setMobileMenu(false);
+    };
     
-    // call useResponsive Hook
-    const { desktopScreen } = useResponsive();
-
     // navbar links & titles as objects, put in array to map over for cleaner return code
     const navLinksArray = [
         {

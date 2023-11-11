@@ -15,7 +15,11 @@ export default function useResponsive() {
         const tabletWidth = window.innerWidth >= 480 && window.innerWidth <= 750;
         const desktopWidth = window.innerWidth > 750;
 
-        setScreenType({mobileScreen: mobileWidth, tabletScreen: tabletWidth, desktopScreen: desktopWidth});
+        setScreenType({
+            mobileScreen: mobileWidth,
+            tabletScreen: tabletWidth,
+            desktopScreen: desktopWidth
+        });
     };
 
     // update state on initial load
@@ -27,7 +31,7 @@ export default function useResponsive() {
         window.addEventListener("resize", updateWindowWidth);
 
         // remove eventListner to avoid memory leaks, collision of component events
-        return function cleanup() {
+        return () => {
             window.removeEventListener("resize", updateWindowWidth);
         };
     }, []);
