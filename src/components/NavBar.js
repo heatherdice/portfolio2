@@ -10,8 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown";
 
-/* @TODO 9/24/23:
-* dropdown menu: create, style (new component)
+/* @TODO 11/11/23:
 * only fade in when loading for first time
 */
 
@@ -23,6 +22,19 @@ export default function NavBar() {
     const toggleMenu = () => {
         setMobileMenu(prevState => !prevState);
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (mobileMenu) {
+                setMobileMenu(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [mobileMenu]);
     
     // call useResponsive Hook
     const { desktopScreen } = useResponsive();
@@ -65,7 +77,7 @@ export default function NavBar() {
                     ) : (
                         <>
                             <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
-                                    <FontAwesomeIcon icon={!mobileMenu ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleMenu} />
+                                <FontAwesomeIcon icon={!mobileMenu ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleMenu} />
                             </div>
                         </>
                     )} 
