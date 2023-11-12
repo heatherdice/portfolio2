@@ -3,7 +3,7 @@ import React from "react";
 import FadeIn from 'react-fade-in';
 import useResponsive from "../hooks/useResponsive";
 
-/* @TODO:
+/* @TODO 11/11/23:
 * better mobile layout */
 
 export default function Home() {

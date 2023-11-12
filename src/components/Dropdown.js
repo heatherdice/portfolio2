@@ -4,7 +4,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-/* @TODO: 
+/* @TODO 11/11/23: 
 * different styling (maybe blue w/ gray text)
 * responsive styling
 */
