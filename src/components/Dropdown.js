@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 export default function Dropdown({ props }) {
     return (
         <div className="flex justify-end z-40 my-3 mx-5">
-            <ul className="w-2/5 text-right text-xl leading-10 bg-white bg-opacity-25 pl-3 py-1 border-2 border-oxford-blue rounded">
+            <ul className="w-2/5 text-right text-xl leading-10 bg-white bg-opacity-25 pl-3 py-1  rounded shadow-lg shadow-oxford-blue">
                 {props.map((link, index) => (
                     <li key={index} className="nav-link cursor-pointer pr-3">
                         <NavLink to={link.link}>
