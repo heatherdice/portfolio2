@@ -16,7 +16,7 @@ export default function Home() {
     // would like to make this dryer somehow - don't like the repetition
     if (mobileScreen || tabletScreen) {
         responsivePageContent = {
-            alignItems: 'center'
+            alignItems: 'center',
         };
     };
     if (mobileScreen) {
@@ -31,7 +31,7 @@ export default function Home() {
     } else if (tabletScreen) {
         responsiveTextStyle = {
             titleTextStyle : {
-                fontSize: '6rem',
+                fontSize: '5.5rem',
             },
             subtitleTextStyle: {
                 fontSize: '3rem'
