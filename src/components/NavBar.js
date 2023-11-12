@@ -1,7 +1,7 @@
 /* NavBar comopnent utilizing FadeIn component for fade-in animation & custom useResponsive Hook for responsiveness.
 * Maps over navLinksArray to supply navbar with links to various pages.
 * NavBar.css provides styling for animated elements. */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
@@ -16,32 +16,15 @@ import Dropdown from "./Dropdown";
 
 export default function NavBar() {
     // mobile menu open state, initial value set to false
-    const [mobileMenu, setMobileMenu] = useState(false);
+    const [menuIcon, setMenuIcon] = useState(false);
     
     // call useResponsive Hook
     const { desktopScreen } = useResponsive();
 
     // open/close mobile menu
-    const toggleMenu = () => {
-        setMobileMenu(prevState => !prevState);
+    const toggleIcon = () => {
+        setMenuIcon(prevState => !prevState);
     };
-
-    // close navbar on resize
-    useEffect(() => {
-        // handle window resize
-        const handleResize = () => {
-            // close mobile menu if it's open when window size changes
-            if (mobileMenu) {
-                setMobileMenu(false);
-            }
-        };
-        // attach event listener
-        window.addEventListener('resize', handleResize);
-        // cleanup event listener on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [mobileMenu]);
     
     // navbar links & titles as objects, put in array to map over for cleaner return code
     const navLinksArray = [
@@ -81,13 +64,13 @@ export default function NavBar() {
                     ) : (
                         <>
                             <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
-                                <FontAwesomeIcon icon={!mobileMenu ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleMenu} />
+                                <FontAwesomeIcon icon={!menuIcon ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleIcon} />
                             </div>
                         </>
                     )} 
                 </FadeIn>
                 {/* toggle mobile/tablet dropdown menu */}
-                {!desktopScreen && mobileMenu && (
+                {!desktopScreen && menuIcon && (
                     <Dropdown props={navLinksArray} />
                 )}
             </nav>
