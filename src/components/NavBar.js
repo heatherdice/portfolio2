@@ -19,7 +19,7 @@ export default function NavBar() {
     const [mobileMenu, setMobileMenu] = useState(false);
     
     // call useResponsive Hook
-    const { mobileScreen, desktopScreen } = useResponsive();
+    const { desktopScreen } = useResponsive();
 
     // open/close mobile menu
     const toggleMenu = () => {
@@ -27,9 +27,21 @@ export default function NavBar() {
     };
 
     // close navbar on resize
-    if (mobileMenu && !mobileScreen) {
-        setMobileMenu(false);
-    };
+    useEffect(() => {
+        // handle window resize
+        const handleResize = () => {
+            // close mobile menu if it's open when window size changes
+            if (mobileMenu) {
+                setMobileMenu(false);
+            }
+        };
+        // attach event listener
+        window.addEventListener('resize', handleResize);
+        // cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [mobileMenu]);
     
     // navbar links & titles as objects, put in array to map over for cleaner return code
     const navLinksArray = [
