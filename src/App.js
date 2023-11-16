@@ -8,13 +8,13 @@ import About from './pages/About.js';
 export default function App() {
 
   return (
-    <div>
+    <>
       {/* <VideoBackground /> */}
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
       </Routes>
-    </div>
+    </>
   );
 };
