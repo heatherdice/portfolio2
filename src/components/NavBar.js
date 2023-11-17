@@ -48,27 +48,32 @@ export default function NavBar() {
 
     return (
         <>
-            <nav className="absolute w-screen h-[10%] top-0 z-40">
-                {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
-                <FadeIn delay='5000' transitionDuration='3000'>
-                    {desktopScreen ? (
-                        <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
-                            {navLinksArray.map((navbar) =>
-                                <li className="nav-link cursor-pointer p-5">
-                                    <NavLink to={navbar.link}>
-                                        {navbar.title}
-                                    </NavLink>
-                                </li>
-                            )}
-                        </ul>
-                    ) : (
-                        <>
-                            <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
-                                <FontAwesomeIcon icon={!menuIcon ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleIcon} />
-                            </div>
-                        </>
-                    )} 
-                </FadeIn>
+            <nav className="absolute h-[10%] top-0 z-40 w-screen">
+                <div className="flex flex-row justify-between items-center w-[10%]">
+                    <FadeIn delay='5000' transitionDuration='3000'>
+
+                        <h1 className="text-6xl p-5 font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">HD</h1>
+
+                        {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
+                        {desktopScreen ? (
+                            <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
+                                {navLinksArray.map((navbar) =>
+                                    <li className="nav-link cursor-pointer p-5" key={navbar.link}>
+                                        <NavLink to={navbar.link}>
+                                            {navbar.title}
+                                        </NavLink>
+                                    </li>
+                                )}
+                            </ul>
+                        ) : (
+                            <>
+                                <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
+                                    <FontAwesomeIcon icon={!menuIcon ? faBars : faXmark} className="absolute z-40" type="button" onClick={toggleIcon} />
+                                </div>
+                            </>
+                        )} 
+                    </FadeIn>
+                </div>
                 {/* toggle mobile/tablet dropdown menu */}
                 {!desktopScreen && menuIcon && (
                     <Dropdown props={navLinksArray} />

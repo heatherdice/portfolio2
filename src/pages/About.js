@@ -8,7 +8,7 @@ export default function About() {
                 <div className="text-2xl">
                     This will be where the summary goes.
                 </div>
-                <div className="h-[75%] w-[75%] flex">
+                <div className="h-[75%] w-[75%] flex justify-center content-center">
                     <img className="rounded-md shadow-lg" src={profilePic} alt="profile picture" />
                 </div>
             </div>
