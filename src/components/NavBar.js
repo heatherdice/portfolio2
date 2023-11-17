@@ -49,17 +49,17 @@ export default function NavBar() {
     return (
         <>
             <nav className="absolute h-[10%] top-0 z-40 w-screen">
-                <div className="flex flex-row justify-between items-center w-[10%]">
-                    <FadeIn delay='5000' transitionDuration='3000'>
+                <div className="flex flex-row items-center w-[10%]">
+                    {/* <FadeIn delay='5000' transitionDuration='3000'> */}
                         <Link to="/">
-                            <h1 className="text-6xl p-5 font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">HD</h1>
+                            <div className="text-6xl p-5 font-katibeh leading-8 mt-3 justify-start">HD</div>
                         </Link>
 
                         {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
                         {desktopScreen ? (
                             <ul className="flex flex-row justify-end font-karla font-semibold text-3xl text-oxford-blue">
                                 {navLinksArray.map((navbar) =>
-                                    <li className="nav-link cursor-pointer p-5" key={navbar.link}>
+                                    <li className="nav-link cursor-pointer p-3" key={navbar.link}>
                                         <NavLink to={navbar.link}>
                                             {navbar.title}
                                         </NavLink>
@@ -73,7 +73,7 @@ export default function NavBar() {
                                 </div>
                             </>
                         )} 
-                    </FadeIn>
+                    {/* </FadeIn> */}
                 </div>
                 {/* toggle mobile/tablet dropdown menu */}
                 {!desktopScreen && menuIcon && (
