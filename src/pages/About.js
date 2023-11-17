@@ -3,7 +3,7 @@ import profilePic from "../assets/images/profilepic.jpg";
 
 export default function About() {
     return (
-        <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center">
+        <div className="absolute m-[10%] flex flex-col justify-center items-center">
             <div className="grid grid-cols-2 gap-5">
                 <div className="text-2xl">
                     This will be where the summary goes.
