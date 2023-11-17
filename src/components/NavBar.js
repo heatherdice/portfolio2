@@ -2,7 +2,7 @@
 * Maps over navLinksArray to supply navbar with links to various pages.
 * NavBar.css provides styling for animated elements. */
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../css/NavBar.css";
 import useResponsive from "../hooks/useResponsive";
@@ -51,8 +51,9 @@ export default function NavBar() {
             <nav className="absolute h-[10%] top-0 z-40 w-screen">
                 <div className="flex flex-row justify-between items-center w-[10%]">
                     <FadeIn delay='5000' transitionDuration='3000'>
-
-                        <h1 className="text-6xl p-5 font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">HD</h1>
+                        <Link to="/">
+                            <h1 className="text-6xl p-5 font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">HD</h1>
+                        </Link>
 
                         {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
                         {desktopScreen ? (
