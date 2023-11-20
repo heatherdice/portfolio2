@@ -12,7 +12,6 @@ import Dropdown from "./Dropdown";
 
 /* @TODO 11/19/23:
 * only fade in when loading for first time
-* situate nav bar to right, HD logo to left
 */
 
 export default function NavBar() {
