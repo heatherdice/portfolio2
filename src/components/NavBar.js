@@ -10,8 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown";
 
-/* @TODO 11/11/23:
+/* @TODO 11/19/23:
 * only fade in when loading for first time
+* situate nav bar to right, HD logo to left
 */
 
 export default function NavBar() {
@@ -48,27 +49,31 @@ export default function NavBar() {
 
     return (
         <>
-            <nav className="absolute top-0 z-40 p-5">
-                <div className="flex flex-row items-center w-screen">
-                    <FadeIn delay='5000' transitionDuration='3000'>
-                        <Link to="/">
-                            <div className="text-6xl font-katibeh leading-8 mt-3 justify-start">HD</div>
-                        </Link>
-                    </FadeIn>
+            <nav className="absolute top-0 z-40">
+                <div className="flex items-center justify-between w-screen p-5">
+                    <div className="flex items-center">
+                        <FadeIn delay='5000' transitionDuration='3000'>
+                            <Link to="/">
+                                <div className="text-6xl font-katibeh leading-8 mt-3">HD</div>
+                            </Link>
+                        </FadeIn>
+                    </div>
 
                     {/* ternary displaying navbar list if desktop screen, hamburger menu if tablet or mobile screen */}
                     {desktopScreen ? (
-                        <FadeIn delay='5000' transitionDuration='3000'>
-                            <ul className="flex flex-row font-karla font-semibold text-3xl text-oxford-blue mb-5 leading-none">
-                                {navLinksArray.map((navbar) =>
-                                    <li className="nav-link cursor-pointer px-3" key={navbar.link}>
-                                        <NavLink to={navbar.link}>
-                                            {navbar.title}
-                                        </NavLink>
-                                    </li>
-                                )}
-                            </ul>
-                        </FadeIn>
+                        <div className="flex items-center">
+                            <FadeIn delay='5000' transitionDuration='3000'>
+                                <ul className="flex flex-row font-karla font-semibold text-3xl text-oxford-blue mb-5 leading-none">
+                                    {navLinksArray.map((navbar) =>
+                                        <li className="nav-link cursor-pointer px-3" key={navbar.link}>
+                                            <NavLink to={navbar.link}>
+                                                {navbar.title}
+                                            </NavLink>
+                                        </li>
+                                    )}
+                                </ul>
+                            </FadeIn>
+                        </div>
                     ) : (
                         <>
                             <div className="flex justify-end text-oxford-blue text-3xl cursor-pointer p-5">
