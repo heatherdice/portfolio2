@@ -53,7 +53,7 @@ export default function NavBar() {
                     <div className="flex items-center">
                         <FadeIn delay='5000' transitionDuration='3000'>
                             <Link to="/">
-                                <div className="text-6xl font-katibeh leading-8 mt-3">HD</div>
+                                <div className="text-6xl font-katibeh leading-8 mt-3 text-lavender drop-shadow-md shadow-oxford-blue">HD</div>
                             </Link>
                         </FadeIn>
                     </div>
