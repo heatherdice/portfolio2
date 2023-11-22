@@ -3,7 +3,8 @@ import VideoBackground from '../components/VideoBackground';
 import FadeIn from 'react-fade-in';
 import useResponsive from "../hooks/useResponsive";
 
-/* @TODO 11/11/23:
+/** @TODO 11/21/23:
+* loading animation
 * better mobile layout */
 
 export default function Home() {

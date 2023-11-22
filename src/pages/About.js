@@ -2,6 +2,12 @@ import React from "react";
 import background from "../assets/images/paintedBackground.png";
 import profilePic from "../assets/images/profilepic.jpg";
 
+/** @TODO 11/21/23:
+ * add parallax library
+ * responsive design
+ * loading animation
+ */
+
 export default function About() {
     return (
         <div style={{ 
