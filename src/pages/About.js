@@ -13,7 +13,7 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-5 text-oxford-blue">
                     <div className="text-left">
                         <h1 className="text-7xl leading-loose font-bold">Hey, I'm Heather!</h1>
-                        <p className="text-3xl font-semibold">I'm a fullstack developer with a particular interest in frontend work.</p>
+                        <p className="text-3xl font-semibold">I'm a music teacher-turned fullstack developer from the Philadelphia area with a particular interest in frontend work. I am currently working for Altus Technology Solutions as a junior web developer.</p>
                     </div>
                     <div className="h-[75%] w-[75%] flex justify-center content-center">
                         <img className="rounded-md shadow-lg" src={profilePic} alt="profile picture" />
