@@ -60,7 +60,7 @@ export default function Home() {
             <VideoBackground />
             <div style={responsivePageContent} className="absolute w-full h-full top-0 flex flex-col justify-center">
                 <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 3 }}>
                     <h1 
