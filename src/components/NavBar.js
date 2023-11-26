@@ -51,7 +51,7 @@ export default function NavBar() {
                 <div className="flex items-center justify-between w-screen p-5">
                     <div className="flex items-center">
                         <Link to="/">
-                            <h1 className="text-6xl font-katibeh leading-none mt-3  bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text">HD</h1>
+                            <h1 className="name-style text-6xl mt-3 bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50%">HD</h1>
                         </Link>
                     </div>
 

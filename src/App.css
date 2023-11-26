@@ -8,3 +8,11 @@ body, html {
     padding: 0;
     overflow: clip;
 }
+
+.name-style {
+    font-family: 'Katibeh', cursive;
+    background: linear-gradient(to bottom, var(--tw-gradient-stops)); /* .bg-gradient-to-b */
+    color: transparent; /* .text-transparent */
+    background-clip: text; /* .bg-clip-text */
+    line-height: 1; /* .leading-none */
+}

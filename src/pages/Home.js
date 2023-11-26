@@ -1,6 +1,7 @@
 import React from "react";
 import VideoBackground from '../components/VideoBackground';
 import useResponsive from "../hooks/useResponsive";
+import { motion } from "framer-motion";
 
 /** @TODO 11/21/23:
 * loading animation
@@ -58,7 +59,16 @@ export default function Home() {
             {/* VideoBackground component moved to App.js 9/10, may opt to move back to just home or use as loading screen */}
             <VideoBackground />
             <div style={responsivePageContent} className="absolute w-full h-full top-0 flex flex-col justify-center">
-                <h1 style={responsiveTextStyle.titleTextStyle} className="font-katibeh bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50% text-transparent bg-clip-text leading-none">Heather Dice</h1>
+                <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 3 }}>
+                    <h1 
+                    style={responsiveTextStyle.titleTextStyle} 
+                    className="name-style bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50%">
+                        Heather Dice
+                    </h1>
+                </motion.div>
                 <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue font-medium leading-none">Web Developer</h2>
             </div>
         </div>
