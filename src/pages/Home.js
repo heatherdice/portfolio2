@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 /** @TODO 11/21/23:
 * loading animation
+* clean up framer motion code
 * better mobile layout */
 
 export default function Home() {
@@ -62,14 +63,19 @@ export default function Home() {
                 <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 3 }}>
+                transition={{ delay: 3, duration: 3 }}>
                     <h1 
                     style={responsiveTextStyle.titleTextStyle} 
                     className="name-style bg-gradient-to-b from-oxford-blue via-royal-blue to-french-gray from-2% to-50%">
                         Heather Dice
                     </h1>
                 </motion.div>
-                <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue font-medium leading-none">Web Developer</h2>
+                <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 4, duration: 3 }}>
+                    <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue font-medium leading-none">Web Developer</h2>
+                </motion.div>
             </div>
         </div>
     );
