@@ -73,7 +73,7 @@ export default function Home() {
                 <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 4, duration: 3 }}>
+                transition={{ delay: 5, duration: 3 }}>
                     <h2 style={responsiveTextStyle.subtitleTextStyle} className="font-karla -mt-10 text-oxford-blue font-medium leading-none">Web Developer</h2>
                 </motion.div>
             </div>
