@@ -9,30 +9,36 @@ export default function useResponsive() {
         desktopScreen: false
     });
 
-    // update state whenever user resizes the screen
-    const updateWindowWidth = () => {
-        const mobileWidth = window.innerWidth <= 480;
-        const tabletWidth = window.innerWidth >= 480 && window.innerWidth <= 750;
-        const desktopWidth = window.innerWidth > 750;
-
-        setScreenType({
-            mobileScreen: mobileWidth,
-            tabletScreen: tabletWidth,
-            desktopScreen: desktopWidth
-        });
-    };
-
-    // update state on initial load
     useEffect(() => {
+        // update state whenever user resizes the screen
+        function updateWindowWidth() {
+            const mobileWidth = window.innerWidth <= 480;
+            const tabletWidth = window.innerWidth >= 480 && window.innerWidth <= 750;
+            const desktopWidth = window.innerWidth > 750;
+
+            setScreenType({
+                mobileScreen: mobileWidth,
+                tabletScreen: tabletWidth,
+                desktopScreen: desktopWidth
+            });
+        };
+
+        let timeoutId;
+
+        // debounce (prevent Hook from being called on every miniscule resize as screen is dragged to a new size)
+        function handleResize() {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(updateWindowWidth, 150);
+        }
         // initial screen size check to apply initial styling
         updateWindowWidth();
 
         // listen for window resize, call updateWindowWidth
-        window.addEventListener("resize", updateWindowWidth);
+        window.addEventListener("resize", handleResize);
 
         // remove eventListner to avoid memory leaks, collision of component events
         return () => {
-            window.removeEventListener("resize", updateWindowWidth);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 

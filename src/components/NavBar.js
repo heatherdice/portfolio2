@@ -14,38 +14,15 @@ import Dropdown from "./Dropdown";
 * find new way to fade in w/ framer-motion
 */
 
-export default function NavBar() {
+export default function NavBar({ navLinksArray, desktopScreen}) {
     // mobile menu open state, initial value set to false
     const [menuIcon, setMenuIcon] = useState(false);
     
-    // call useResponsive Hook
-    const { desktopScreen } = useResponsive();
-
     // open/close mobile menu
     const toggleIcon = () => {
         setMenuIcon(prevState => !prevState);
     };
     
-    // navbar links & titles as objects, put in array to map over for cleaner return code
-    const navLinksArray = [
-        {
-            link: '/about',
-            title: 'About'
-        },
-        {
-            link: '/projects',
-            title: 'Projects'
-        },
-        {
-            link: '/experience',
-            title: 'Experience'
-        },
-        {
-            link: '/contact',
-            title: 'Contact'
-        }
-    ];
-
     return (
         <>
             <nav className="absolute top-0 z-40">
