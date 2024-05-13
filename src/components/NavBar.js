@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../css/NavBar.css";
-import useResponsive from "../hooks/useResponsive";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
